@@ -1,0 +1,13 @@
+.order__steps(class="order__steps--" + pageStep)
+    each step, index in ["Параметри заходу", "Локація", "Послуги", "Підтвердження замовлення"]
+        .order__step
+            if index + 1 < pageStep
+                a.order__step-number.order__step-number--completed(
+                    href=index === 0 ? "/order.html" : index === 1 ? "/order-location.html" : "/order-services.html"
+                ) ✓
+            else if index + 1 === pageStep
+                span.order__step-number.order__step-number--active= index + 1
+            else
+                span.order__step-number= index + 1
+
+            span.order__step-label= step

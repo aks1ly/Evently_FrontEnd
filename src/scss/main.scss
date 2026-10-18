@@ -2,3 +2,16 @@
 @import 'header';
 @import 'hero';
 @import 'footer';
+@import "locations";
+@import "services";
+@import "about";
+@import "order";
+@import "order-locations";
+@import "order-services";
+@import "order-confirmation";
+@import "order-success";
+@import "responsive";
+
+html {
+    scroll-behavior: smooth;
+}

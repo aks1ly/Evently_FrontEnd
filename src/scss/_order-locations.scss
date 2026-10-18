@@ -1,0 +1,271 @@
+
+.order-locations {
+    &__content {
+        display: grid;
+        grid-template-columns: 36% 1fr;
+        gap: 20px;
+        align-items: start;
+    }
+
+    // Ліва панель
+    &__filters {
+        background-color: $light-accent;
+        border-radius: 25px;
+        padding: 30px 30px 5px;
+        align-self: start;
+    }
+
+    &__heading {
+        font-size: $h3-font-size;
+        font-weight: $font-bold;
+        margin: 0 0 20px;
+    }
+
+    &__options {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    &__checkbox {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: $font-size-small;
+        font-weight: $font-medium;
+        cursor: pointer;
+
+        input {
+            appearance: none;
+            width: 21px;
+            height: 21px;
+            border: 1px solid $font-color;
+            border-radius: 5px;
+            background: transparent;
+            cursor: pointer;
+            flex-shrink: 0;
+
+            &:checked {
+                background-color: $accent-color;
+                border-color: $accent-color;
+            }
+
+            &:checked::after {
+                content: "✓";
+                display: block;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                line-height: 19px;
+            }
+        }
+    }
+
+    // Діапазон цін
+    &__price {
+        margin-bottom: 25px;
+    }
+
+    &__price-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 25px;
+
+        h2 {
+            font-size: $h3-font-size;
+            margin: 0;
+        }
+
+        span {
+            font-size: 13px;
+            white-space: nowrap;
+            font-weight: $font-medium;
+        }
+    }
+
+    &__range {
+        position: relative;
+        height: 6px;
+        background-color: $accent-color;
+        border-radius: 5px;
+        margin: 30px 15px 15px;
+
+        input {
+            position: absolute;
+            width: 100%;
+            top: -7px;
+            left: 0;
+            margin: 0;
+            appearance: none;
+            background: transparent;
+            pointer-events: none;
+
+            &::-webkit-slider-thumb {
+                appearance: none;
+                width: 19px;
+                height: 19px;
+                border-radius: 50%;
+                background-color: $accent-color;
+                cursor: pointer;
+                pointer-events: auto;
+            }
+        }
+    }
+
+    &__limits {
+        display: flex;
+        justify-content: space-between;
+        font-size: $font-size-small;
+        font-weight: $font-semibold;
+        margin-bottom: 20px;
+    }
+
+    &__price-fields {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+
+        label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: $font-size-small;
+            font-weight: $font-medium;
+        }
+    }
+
+    &__price-input {
+        display: flex;
+        align-items: center;
+        background: white;
+        border: 1px solid $accent-color;
+        border-radius: 9px;
+        padding: 10px;
+        width: 135px;
+        box-sizing: border-box;
+
+        input {
+            width: 100%;
+            min-width: 0;
+            border: none;
+            outline: none;
+            font: inherit;
+        }
+
+        span {
+            font-size: $font-size-small;
+        }
+    }
+
+    // Картки локацій
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__card {
+        display: grid;
+        grid-template-columns: 200px minmax(0, 1fr);
+        grid-template-rows: 1fr auto;
+        column-gap: 18px;
+        row-gap: 15px;
+        background-color: white;
+        border-radius: 20px;
+        padding: 20px;
+        min-height: 165px;
+    }
+
+    &__image {
+        width: 200px;
+        height: 146px;
+    }
+
+    &__details {
+        min-width: 0;
+    }
+
+    &__name {
+        font-size: $h3-font-size;
+        font-weight: $font-semibold;
+        margin: 0 0 8px;
+    }
+
+    &__meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 13px;
+        font-weight: $font-semibold;
+        margin-bottom: 15px;
+    }
+
+    &__description {
+        color: rgba($font-color, $text-opacity);
+        font-weight: $font-medium;
+        font-size: 13px;
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    &__bottom {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    &__cost {
+        font-size: 20px;
+        font-weight: $font-bold;
+        white-space: nowrap;
+    }
+
+    &__note {
+        font-size: 13px;
+        font-weight: $font-medium;
+        flex: 1;
+        opacity: 0.7;
+    }
+
+    &__choose {
+        background-color: $accent-color;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 13px 25px;
+        font-family: inherit;
+        font-size: $font-size-small;
+        font-weight: $font-semibold;
+        cursor: pointer;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+
+        
+    }
+    .order-locations__price-heading span {
+    font-weight: $font-medium;
+    opacity: 0.7;
+}
+
+.order-locations__meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.order-locations__meta-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+}

@@ -1,0 +1,129 @@
+section.order-confirmation
+    h2.order-confirmation__title Перевірте ваше замовлення
+
+    .order-confirmation__content
+
+        // Ліва колонка
+        .order-confirmation__left
+
+            // Параметри заходу
+            .order-confirmation__card
+                .order-confirmation__card-heading
+                    h3 Параметри заходу
+                    a(href="/order.html") Редагувати
+
+                .order-confirmation__parameters
+                    span Тип заходу
+                    span День народження
+
+                    span Дата і час
+                    span 12 травня 2027, 18:00
+
+                    span Місто проведення
+                    span м. Київ, Київська область
+
+                    span Кількість гостей
+                    span 30
+
+                    span Бюджет
+                    span 50 000 грн
+
+            // Локація
+            .order-confirmation__card
+                .order-confirmation__card-heading
+                    h3 Локація
+                    a(href="/order-location.html") Редагувати
+
+                .order-confirmation__location
+                    img.order-confirmation__location-image(
+                        src="/images/shtandart.png"
+                        alt="Ресторан Штандарт"
+                    )
+
+                    .order-confirmation__location-info
+                        h4 Ресторан “Штандарт”
+
+                        .order-confirmation__location-meta
+                            .order-confirmation__meta-item
+                                img(src="/images/map-pin.png" alt="")
+                                span Київ, вул. Ревуцького, 2Г
+
+                            .order-confirmation__meta-item
+                                img(src="/images/users.png" alt="")
+                                span До 200 гостей
+
+            // Послуги
+            .order-confirmation__card
+                .order-confirmation__card-heading
+                    h3 Послуги
+                    a(href="/order-services.html") Редагувати
+
+                .order-confirmation__services
+
+                    .order-confirmation__service
+                        img(
+                            src="/images/host-oleksandr.png"
+                            alt="Олександр Коваль"
+                        )
+
+                        .order-confirmation__service-info
+                            h4 Олександр Коваль
+                            span Ведучий
+
+                    .order-confirmation__service
+                        img(
+                            src="/images/photographer-veronika.png"
+                            alt="Вероніка Бойко"
+                        )
+
+                        .order-confirmation__service-info
+                            h4 Вероніка Бойко
+                            span Фотограф
+
+        // Права колонка
+        .order-confirmation__right
+
+            // Розрахунок
+            .order-confirmation__summary
+                h3 Попередній розрахунок:
+
+                .order-confirmation__summary-row
+                    span Локація
+                    span 12 000 грн
+
+                .order-confirmation__summary-row
+                    span Послуги
+                    span 15 000 грн
+
+                .order-confirmation__total
+                    h3 ЗАГАЛЬНА ВАРТІСТЬ:
+                    strong 27 000 грн
+
+            // Контактні дані
+            form.order-confirmation__form(id="confirmationForm")
+                h3 Ваші контактні дані:
+
+                label(for="confirmationEmail") Введіть пошту для підтвердження замовлення:
+
+                input#confirmationEmail(
+                    type="email"
+                    name="email"
+                    placeholder="example@gmail.com"
+                    required
+                )
+
+                label(for="confirmationPhone") Введіть номер телефону, щоб ми могли зв’язатись з вами:
+
+                input#confirmationPhone(
+                    type="tel"
+                    name="phone"
+                    placeholder="+380"
+                    required
+                )
+
+                label.order-confirmation__agreement
+                    input(type="checkbox" name="agreement" checked required)
+                    span Я погоджуюся на обробку персональних даних відповідно до Політики конфіденційності.
+
+                a.order-confirmation__button(href="#order-success") Підтвердити замовлення
+                include ../components/order-success.pug

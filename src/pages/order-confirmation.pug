@@ -1,0 +1,20 @@
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Evently — Підтвердження замовлення
+
+    body
+        include ../components/header.pug
+
+        main
+            section.order
+                h1.order__title Створення замовлення
+
+                - var pageStep = 4
+                include ../components/order-steps.pug
+
+                include ../components/order-confirmation.pug
+
+        include ../components/footer.pug

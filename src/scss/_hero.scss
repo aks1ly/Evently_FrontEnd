@@ -1,6 +1,8 @@
 .hero {
+    position: relative;
     padding: 40px 0 0 $margin-left;
-
+    z-index: 1;
+    padding-bottom: 60px;
     &__title {
         font-size: $h1-font-size;
         font-weight: $font-bold;
@@ -29,4 +31,55 @@
         padding: 20px 28px;
         border-radius: $border-radius-medium;
     }
+
+// Головне зображення з квітами
+&__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    min-width: 500px;
+    max-width: 650px;
+    z-index: 0;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+// Контейнер із перевагами
+&__features {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 60%;
+    margin-top: 41px;
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+// Окрема перевага
+&__feature {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+
+    // Кружечок з іконкою
+    img {
+        width: 69px;
+        height: 69px;
+        object-fit: contain;
+    }
+
+    // Підпис під іконкою
+    span {
+        font-size: 14px;
+        font-weight: $font-medium;
+        white-space: nowrap;
+    }
+}
+
 }

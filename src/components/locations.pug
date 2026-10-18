@@ -1,0 +1,40 @@
+// Секція вибору місця проведення
+section.locations#locations
+    // Заголовок секції
+    p.locations__subtitle Кожне свято починається з правильного місця ♡
+    h2.locations__title Де відбудеться ваша подія?
+
+    // Опис
+    p.locations__description
+        | Від затишного святкування вдома до масштабного заходу просто неба –
+        br
+        | обирайте простір, який відповідає вашим планам та атмосфері свята.
+
+    // Контейнер із трьома варіантами
+    .locations__list
+        // Вдома
+        .locations__item
+            img.locations__image(src="/images/location-home.png" alt="Святкування вдома")
+
+            .locations__info
+                h3.locations__item-title У затишку свого простору
+                .locations__line
+                p.locations__text Теплі зустрічі вдома або святкування в офісі.
+
+        // Ресторан
+        .locations__item
+            img.locations__image(src="/images/location-restaurant.png" alt="Ресторан")
+
+            .locations__info
+                h3.locations__item-title В атмосфері особливого місця
+                .locations__line
+                p.locations__text Ресторани, банкетні зали та святкові простори
+
+        // На природі
+        .locations__item
+            img.locations__image(src="/images/location-outdoor.png" alt="Святкування на природі")
+
+            .locations__info
+                h3.locations__item-title Під відкритим небом
+                .locations__line
+                p.locations__text Святкування серед природи та на свіжому повітрі

@@ -1,0 +1,56 @@
+mixin locationCard(location)
+    article.order-locations__card
+        img.order-locations__image(src=location.image alt=location.name)
+
+        .order-locations__details
+            h3.order-locations__name= location.name
+
+            .order-locations__meta
+                span
+                    img.order-locations__meta-icon(src="/images/map-pin.png" alt="")
+                    | #{location.address}
+
+                span
+                    img.order-locations__meta-icon(src="/images/users.png" alt="")
+                    | До #{location.guests} гостей
+
+            p.order-locations__description= location.description
+
+        .order-locations__bottom
+            strong.order-locations__cost #{location.price} грн
+            span.order-locations__note Оренда залу за захід · меню оплачується окремо
+
+            a.order-locations__choose(href="/order-services.html") Обрати →
+
+mixin serviceCard(service)
+    article.order-services__card
+        img.order-services__photo(src=service.image alt=service.name)
+
+        .order-services__person
+            h3.order-services__name= service.name
+            span.order-services__separator
+            img.order-services__star(src="/images/star.png" alt="")
+            span.order-services__rating= service.rating
+
+        p.order-services__description= service.description
+
+        .order-services__card-bottom
+            .order-services__price
+                strong #{service.price} грн
+                span за захід
+
+            if service.selected
+                span.order-services__add.order-services__add--selected Додано
+            else
+                span.order-services__add Додати
+
+mixin selectedService(name, role, image, price)
+    .order-services__selected-item
+        img.order-services__selected-image(src=image alt=name)
+
+        .order-services__selected-info
+            h3= name
+            span= role
+
+        strong.order-services__selected-price #{price} грн
+        button.order-services__remove(type="button" aria-label="Видалити послугу") ×

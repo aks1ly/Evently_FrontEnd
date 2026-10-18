@@ -1,0 +1,80 @@
+
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Evently — Створення замовлення
+
+    body
+        include ../components/header.pug
+
+        main
+            section.order
+                h1.order__title Створення замовлення
+
+                - var pageStep = 1
+                // Етапи створення замовлення
+                include ../components/order-steps.pug
+
+                .order__content
+                    // Ліва частина — форма
+                    .order__form
+                        h2.order__form-title Заповніть основну інформацію про майбутнє свято:
+
+                        .order__field
+                            label(for="eventType") Тип заходу
+                            select#eventType(name="eventType" required)
+                                option(value="birthday") День народження
+                                option(value="wedding") Весілля
+                                option(value="corporate") Корпоратив
+                                option(value="meeting") Зустріч із близькими
+                                option(value="other") Інше
+
+                        .order__fields
+                            .order__field
+                                label(for="eventDate") Дата проведення
+                                input#eventDate(type="date" name="eventDate" value="2026-10-09" required)
+
+                            .order__field
+                                label(for="eventTime") Час
+                                input#eventTime(type="time" name="eventTime" value="18:00" required)
+
+                            .order__field
+                                label(for="eventCity") Місто проведення
+                                select#eventCity(name="eventCity" required)
+                                    <!-- option(value="" selected disabled) Оберіть місто -->
+                                    option(value="kyiv") Київ
+                                    option(value="lviv" selected) Львів
+                                    option(value="odesa") Одеса
+                                    option(value="dnipro") Дніпро
+                                    option(value="kharkiv") Харків
+
+                            .order__field
+                                label(for="guestCount") Кількість гостей
+                                input#guestCount(type="number" name="guestCount" min="1" value="30" required)
+
+                        .order__budget
+                            .order__budget-heading
+                                label(for="budgetRange") Бюджет
+                                span Орієнтовна сума
+
+                            input#budgetRange(type="range" min="5000"  max="200000" step="1000" value="50000")
+
+                            .order__budget-limits
+                                span 5 000
+                                span 200 000+
+
+                            .order__budget-value
+                                input#budgetValue(type="number" name="budget" min="5000" value="50000")
+                                span грн
+
+                        a.order__button(href="/order-location.html") Далі →
+
+                    // Права частина
+                    .order__preview
+                        img.order__preview-image(src="/images/order-celebration.png" alt="Келихи шампанського")
+                        h2.order__preview-title Розпочніть створення вашого свята!
+                        p.order__preview-text Оберіть основні параметри, щоб ми могли запропонувати найкращі варіанти локацій та послуг.
+
+        include ../components/footer.pug

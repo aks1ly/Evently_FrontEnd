@@ -1,0 +1,344 @@
+
+.order {
+    scroll-margin-top: 90px;
+    position: relative;
+    padding: 40px 50px 50px;
+
+    &__title {
+        font-size: $h2-font-size;
+        font-weight: $font-bold;
+        text-align: center;
+        margin: 0 0 35px;
+    }
+
+// Етапи замовлення
+&__steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 800px;
+    margin: 0 auto 35px;
+    position: relative;
+}
+
+// Світла лінія від першого до четвертого кружечка
+&__steps::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 12.5%;
+    width: 75%;
+    height: 4px;
+    background-color: #ffe7dc;
+}
+
+// Червона частина лінії
+&__steps::after {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 12.5%;
+    width: 0;
+    height: 4px;
+    background-color: $accent-color;
+}
+
+// Етап 1 — половина між 1 і 2
+&__steps--1::after {
+    width: 12.5%;
+}
+
+// Етап 2 — половина між 2 і 3
+&__steps--2::after {
+    width: 37.5%;
+}
+
+// Етап 3 — половина між 3 і 4
+&__steps--3::after {
+    width: 62.5%;
+}
+
+// Етап 4 — вся лінія червона
+&__steps--4::after {
+    width: 75%;
+}
+
+&__step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+    min-width: 0;
+}
+
+    
+    &__step-number {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        background-color: #ffe7dc;
+        color: $font-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: inherit;
+        font-size: $h3-font-size;
+        font-weight: $font-bold;
+        cursor: default;
+
+        &--active,
+        &--completed,
+        &--started {
+            background-color: $accent-color;
+            color: white;
+        }
+
+        &--completed,
+        &--started {
+            cursor: pointer;
+        }
+
+        &:disabled {
+            cursor: default;
+            opacity: 1;
+        }
+    }
+
+
+    &__step-label {
+        font-size: $font-size-small;
+        font-weight: $font-medium;
+        text-align: center;
+    }
+
+    // Дві колонки
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+        align-items: stretch;
+    }
+
+    // Форма
+    &__form {
+        background-color: white;
+        border-radius: 25px;
+        padding: 25px 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__form-title {
+        color: $accent-color;
+        font-size: $h2-font-size;
+        font-weight: $font-semibold;
+        margin: 0;
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        label {
+            font-size: 18px;
+            font-weight: $font-semibold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            height: 42px;
+            border: 1px solid #ffc4a9;
+            border-radius: 9px;
+            padding: 0 15px;
+            background-color: white;
+            color: $font-color;
+            font-family: inherit;
+            font-size: $font-size-small;
+            font-weight: $font-medium;
+            box-sizing: border-box;
+        }
+    }
+
+    // Стрілочки у випадаючих списках
+&__field select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231c2944' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+// Прибираємо стандартні стрілочки числових полів
+input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+    &__fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 30px;
+    }
+
+    // Бюджет
+    &__budget {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__budget-heading,
+    &__budget-limits {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__budget-heading {
+        label {
+            font-size: $font-size-small;
+            font-weight: $font-semibold;
+        }
+
+        span {
+            font-size: 13px;
+            white-space: nowrap;
+            font-weight: $font-medium;
+        }
+    }
+
+
+&__budget input[type="range"] {
+    width: 100%;
+    height: 4px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: $accent-color;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &::-webkit-slider-thumb {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: $accent-color;
+        cursor: pointer;
+    }
+
+    &::-moz-range-thumb {
+        width: 18px;
+        height: 18px;
+        border: none;
+        border-radius: 50%;
+        background-color: $accent-color;
+        cursor: pointer;
+    }
+}
+
+    &__budget-limits {
+        font-size: $font-size-small;
+        font-weight: $font-semibold;
+    }
+
+    &__budget-value {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 220px;
+        border: 1px solid #F26B5E;
+        border-radius: 9px;
+        padding: 10px 15px;
+
+        input {
+            width: 100%;
+            border: none;
+            outline: none;
+            font-family: inherit;
+            font-size: $font-size-small;
+            font-weight: $font-medium;
+            color: $font-color;
+        }
+    }
+
+    &__button {
+        align-self: flex-end;
+        margin-top: auto;
+        width: 200px;
+        height: 58px;
+        border: none;
+        border-radius: 12px;
+        background-color: $accent-color;
+        color: white;
+        font-family: inherit;
+        font-size: $h3-font-size;
+        font-weight: $font-semibold;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+
+    // Права картка
+    &__preview {
+        background-color: #ffe7dc;
+        border-radius: 25px;
+        padding: 35px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    &__preview-image {
+        display: block;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto 30px;
+    }
+
+    &__preview-title {
+        font-size: $h3-font-size;
+        font-weight: $font-bold;
+        max-width: 360px;
+        margin: 0 0 10px;
+    }
+
+    &__preview-text {
+        font-size: $font-size-small;
+        color: rgba($font-color, $text-opacity);
+        line-height: 1.4;
+        max-width: 390px;
+        margin: 0;
+    }
+
+    &__step-number {
+    text-decoration: none;
+}
+
+&__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+}

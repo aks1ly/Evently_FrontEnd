@@ -1,0 +1,1679 @@
+$tablet-min: 768px;
+$tablet-max: 1024px;
+$phone-max: 767px;
+$phone-xs-max: 380px;
+
+@mixin tablet {
+    @media (min-width: #{$tablet-min}) and (max-width: #{$tablet-max}) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media (max-width: #{$phone-max}) {
+        @content;
+    }
+}
+
+@mixin phone-xs {
+    @media (max-width: #{$phone-xs-max}) {
+        @content;
+    }
+}
+
+// Спільні речі для всіх малих екранів
+@media (max-width: #{$tablet-max}) {
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+
+    .locations,
+    .services,
+    .about {
+        scroll-margin-top: 70px;
+    }
+}
+
+
+// =============================================================
+// ПЛАНШЕТИ (768–1024px)
+// =============================================================
+@include tablet {
+
+    // ---------- Шапка ----------
+    .header__container {
+        padding: 12px 24px;
+        gap: 24px;
+    }
+
+    .header__logo img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .header__nav {
+        gap: 28px;
+    }
+
+    .header__link {
+        font-size: 16px;
+    }
+
+    // ---------- Hero ----------
+    .hero {
+        padding: 36px 24px 48px;
+    }
+
+    .hero__title {
+        font-size: 38px;
+        max-width: 56%;
+    }
+
+    .hero__description {
+        font-size: 15px;
+        line-height: 1.45;
+        max-width: 50%;
+        margin: 16px 0 26px;
+    }
+
+    .hero__button {
+        font-size: 17px;
+        padding: 16px 22px;
+    }
+
+    .hero__image {
+        width: 46%;
+        min-width: 0;
+    }
+
+    .hero__features {
+        width: 64%;
+        gap: 12px;
+        margin-top: 34px;
+        padding-right: 0;
+    }
+
+    .hero__feature {
+        gap: 10px;
+
+        img {
+            width: 56px;
+            height: 56px;
+        }
+
+        span {
+            font-size: 13px;
+            line-height: 1.3;
+            white-space: normal;
+        }
+    }
+
+    // ---------- Локації / Послуги / Про нас ----------
+    .locations,
+    .services,
+    .about {
+        padding: 0 24px 44px;
+    }
+
+    .locations__subtitle,
+    .services__subtitle,
+    .about__subtitle {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .locations__title,
+    .services__title,
+    .about__title {
+        font-size: 22px;
+        margin-bottom: 14px;
+    }
+
+    .locations__description,
+    .services__description {
+        font-size: 14px;
+        margin-bottom: 26px;
+    }
+
+    // Три картки: фото зверху, текст під ним
+    .locations__list {
+        gap: 20px;
+    }
+
+    .locations__item {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .locations__image {
+        width: 100%;
+    }
+
+    .locations__item-title,
+    .services__item-title {
+        font-size: 17px;
+    }
+
+    .locations__item-title {
+        min-height: 2.6em;
+    }
+
+    .locations__line {
+        margin-top: 12px;
+    }
+
+    .locations__text {
+        font-size: 14px;
+        margin-top: 12px;
+    }
+
+    .services__list {
+        gap: 24px;
+    }
+
+    .services__image {
+        width: 100%;
+    }
+
+    .services__item-title {
+        margin: 16px 0 8px;
+    }
+
+    .services__text {
+        font-size: 14px;
+    }
+
+    .about__container {
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
+        align-items: center;
+        gap: 28px;
+    }
+
+    .about__text {
+        font-size: 14px;
+        line-height: 1.5;
+
+        p {
+            margin-bottom: 14px;
+        }
+    }
+
+    .about__image {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    // ---------- Футер ----------
+    .footer__container {
+        grid-template-columns: minmax(0, 1fr) 150px 210px;
+        column-gap: 24px;
+        row-gap: 24px;
+        padding: 24px;
+    }
+
+    .footer__logo {
+        font-size: 18px;
+    }
+
+    .footer__description {
+        font-size: 14px;
+    }
+
+    .footer__title {
+        font-size: 16px;
+    }
+
+    .footer__link,
+    .footer__contact {
+        font-size: 14px;
+    }
+
+    // ---------- Крок 1: параметри ----------
+    .order {
+        padding: 32px 24px 44px;
+    }
+
+    .order__title {
+        font-size: 22px;
+        margin-bottom: 26px;
+    }
+
+    .order__steps::before,
+    .order__steps::after {
+        top: 24px;
+    }
+
+    .order__step-number {
+        width: 52px;
+        height: 52px;
+        font-size: 18px;
+    }
+
+    .order__step-label {
+        font-size: 14px;
+    }
+
+    .order__content {
+        gap: 20px;
+    }
+
+    .order__form {
+        padding: 24px 20px;
+        gap: 18px;
+    }
+
+    .order__form-title {
+        font-size: 20px;
+    }
+
+    .order__fields {
+        gap: 18px 16px;
+    }
+
+    .order__field label {
+        font-size: 15px;
+    }
+
+    .order__field input,
+    .order__field select {
+        font-size: 15px;
+    }
+
+    .order__budget-heading label {
+        font-size: 15px;
+    }
+
+    .order__budget-heading span {
+        font-size: 12px;
+    }
+
+    .order__budget-limits {
+        font-size: 14px;
+    }
+
+    .order__budget-value {
+        width: 100%;
+        max-width: 220px;
+    }
+
+    .order__button {
+        width: 100%;
+        height: 52px;
+        font-size: 18px;
+    }
+
+    .order__preview {
+        padding: 24px 18px;
+    }
+
+    .order__preview-image {
+        max-width: 300px;
+        margin-bottom: 18px;
+    }
+
+    .order__preview-title {
+        font-size: 18px;
+    }
+
+    .order__preview-text {
+        font-size: 14px;
+    }
+
+    // ---------- Крок 2: локація ----------
+    .order-locations__content {
+        grid-template-columns: 240px minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .order-locations__filters {
+        padding: 22px 18px 8px;
+    }
+
+    .order-locations__heading {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    .order-locations__options {
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .order-locations__checkbox {
+        font-size: 14px;
+    }
+
+    .order-locations__price-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin-bottom: 16px;
+
+        h2 {
+            font-size: 18px;
+        }
+
+        span {
+            font-size: 12px;
+        }
+    }
+
+    .order-locations__range {
+        margin: 24px 10px 14px;
+    }
+
+    .order-locations__limits {
+        font-size: 14px;
+    }
+
+    .order-locations__price-fields {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+
+        label {
+            justify-content: space-between;
+            font-size: 14px;
+        }
+    }
+
+    .order-locations__price-input {
+        width: 140px;
+        padding: 8px 10px;
+    }
+
+    .order-locations__card {
+        grid-template-columns: 160px minmax(0, 1fr);
+        padding: 16px;
+        column-gap: 14px;
+        row-gap: 12px;
+        min-height: 0;
+    }
+
+    .order-locations__image {
+        width: 160px;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .order-locations__name {
+        font-size: 17px;
+    }
+
+    .order-locations__meta {
+        gap: 6px 12px;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .order-locations__description {
+        font-size: 13px;
+    }
+
+    .order-locations__bottom {
+        gap: 12px;
+    }
+
+    .order-locations__cost {
+        font-size: 17px;
+    }
+
+    .order-locations__note {
+        font-size: 12px;
+        line-height: 1.35;
+    }
+
+    .order-locations__choose {
+        padding: 11px 16px;
+        font-size: 14px;
+    }
+
+    // ---------- Крок 3: послуги ----------
+    // Категорії — горизонтальна смуга над каталогом
+    .order-services__layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .order-services__sidebar-title {
+        font-size: 20px;
+        margin: 0 0 14px;
+    }
+
+    .order-services__categories {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .order-services__category {
+        flex: 1 1 0;
+        justify-content: center;
+        gap: 12px;
+        padding: 14px 12px;
+        font-size: 16px;
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .order-services__catalog {
+        gap: 18px;
+        padding: 18px;
+    }
+
+    .order-services__photo {
+        height: 190px;
+        margin-bottom: 14px;
+    }
+
+    .order-services__name {
+        font-size: 16px;
+    }
+
+    // Імʼя на окремому рядку, під ним зірка і рейтинг — однаково в усіх картках
+    .order-services__person {
+        margin-bottom: 10px;
+        gap: 6px;
+    }
+
+    .order-services__name {
+        flex: 0 0 100%;
+    }
+
+    .order-services__separator {
+        display: none;
+    }
+
+    .order-services__rating {
+        font-size: 12px;
+    }
+
+    .order-services__description {
+        font-size: 12px;
+        margin-bottom: 16px;
+    }
+
+    .order-services__price strong {
+        font-size: 16px;
+    }
+
+    .order-services__add {
+        min-width: 90px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .order-services__summary {
+        gap: 18px;
+        margin-top: 18px;
+    }
+
+    .order-services__selected {
+        padding: 20px;
+        min-height: 0;
+    }
+
+    .order-services__selected-title {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .order-services__selected-item {
+        gap: 14px;
+        margin-bottom: 16px;
+    }
+
+    .order-services__selected-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .order-services__selected-info h3 {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+
+    .order-services__selected-info span {
+        font-size: 14px;
+    }
+
+    .order-services__selected-price {
+        font-size: 15px;
+    }
+
+    .order-services__checkout {
+        gap: 14px;
+    }
+
+    .order-services__total {
+        padding: 22px 16px;
+
+        h2 {
+            font-size: 18px;
+        }
+
+        strong {
+            font-size: 22px;
+        }
+    }
+
+    .order-services__next {
+        min-height: 56px;
+        font-size: 18px;
+    }
+
+    // ---------- Крок 4: підтвердження ----------
+    .order-confirmation {
+        margin-top: 24px;
+    }
+
+    .order-confirmation__title {
+        font-size: 22px;
+    }
+
+    .order-confirmation__content {
+        gap: 20px;
+    }
+
+    .order-confirmation__left,
+    .order-confirmation__right {
+        gap: 16px;
+    }
+
+    .order-confirmation__card {
+        padding: 18px;
+    }
+
+    .order-confirmation__card-heading {
+        margin-bottom: 16px;
+
+        h3 {
+            font-size: 18px;
+        }
+
+        a {
+            font-size: 15px;
+        }
+    }
+
+    .order-confirmation__parameters {
+        font-size: 14px;
+        gap: 14px 10px;
+    }
+
+    .order-confirmation__location {
+        gap: 14px;
+    }
+
+    .order-confirmation__location-image {
+        width: 140px;
+        height: 110px;
+    }
+
+    .order-confirmation__location-info h4 {
+        font-size: 17px;
+        margin-bottom: 8px;
+    }
+
+    .order-confirmation__service {
+        gap: 14px;
+
+        img {
+            width: 60px;
+            height: 60px;
+        }
+
+        strong {
+            font-size: 16px;
+        }
+    }
+
+    .order-confirmation__service-info h4 {
+        font-size: 16px;
+    }
+
+    .order-confirmation__service-info span {
+        font-size: 14px;
+    }
+
+    .order-confirmation__summary {
+        padding: 22px 20px;
+
+        > h3 {
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+    }
+
+    .order-confirmation__summary-row span {
+        font-size: 15px;
+    }
+
+    .order-confirmation__total {
+        margin-top: 24px;
+
+        h3 {
+            font-size: 20px;
+        }
+
+        strong {
+            font-size: 28px;
+        }
+    }
+
+    .order-confirmation__form {
+        padding: 20px;
+
+        h3 {
+            font-size: 18px;
+        }
+
+        > label:not(.order-confirmation__agreement) {
+            font-size: 14px;
+        }
+
+        > input {
+            width: 100%;
+        }
+    }
+
+    .order-confirmation__agreement span {
+        font-size: 13px;
+    }
+
+    .order-confirmation__button {
+        height: 56px;
+        font-size: 18px;
+    }
+}
+
+
+// =============================================================
+// ТЕЛЕФОНИ (до 767px) — усе в один стовпчик
+// =============================================================
+@include phone {
+
+    html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+.header, .hero, .content {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+    // ---------- Шапка ----------
+    // Логотип зліва, 4 посилання розтягуються на решту ширини в один рядок
+    .header__container {
+        padding: 10px 16px;
+        gap: 14px;
+    }
+
+    .header__logo img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .header__nav {
+        flex: 1 1 auto;
+        min-width: 0;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 13px;
+    }
+
+    .header__link {
+        font-size: clamp(12px, 3.5vw, 15px);
+        white-space: nowrap;
+    }
+
+    // ---------- Hero ----------
+    // Картинка з квітами — банер над текстом (в потоці, без накладання)
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+
+.hero__image {
+    position: relative;
+    top: auto;
+    right: auto;
+    order: -1;
+    width: 85%;
+    max-width: none;
+    min-width: 0;
+    height: auto;
+    overflow: visible;
+margin-top: -100px;
+margin-left: 115px;
+margin-bottom: 0;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+    .hero {
+        padding: 22px 16px 32px;
+    }
+
+    .hero__title {
+        font-size: clamp(26px, 7.4vw, 32px);
+        line-height: 1.2;
+    }
+
+    .hero__description {
+        font-size: 15px;
+        line-height: 1.5;
+        max-width: none;
+        margin: 14px 0 22px;
+    }
+
+    .hero__button {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-size: 16px;
+        padding: 15px 18px;
+    }
+
+    // 4 переваги — сітка 2×2
+    .hero__features {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 12px;
+        width: 100%;
+        margin-top: 28px;
+        padding-right: 0;
+    }
+
+    .hero__feature {
+        gap: 8px;
+
+        img {
+            width: 52px;
+            height: 52px;
+        }
+
+        span {
+            font-size: 13px;
+            line-height: 1.3;
+            white-space: normal;
+        }
+    }
+
+    // ---------- Локації / Послуги / Про нас ----------
+    .locations,
+    .services,
+    .about {
+        padding: 0 16px 36px;
+    }
+
+    .locations__subtitle,
+    .services__subtitle,
+    .about__subtitle {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .locations__title,
+    .services__title,
+    .about__title {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .locations__description,
+    .services__description {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 22px;
+    }
+
+    // Локації: один стовпчик, фото зліва, текст справа
+    .locations__list {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .locations__item {
+        gap: 14px;
+    }
+
+    .locations__image {
+        width: 42%;
+        align-self: flex-start;
+    }
+
+    .locations__item-title,
+    .services__item-title {
+        font-size: 16px;
+        min-height: 0;
+    }
+
+    .locations__line {
+        margin: 10px 0;
+    }
+
+    .locations__text {
+        font-size: 13px;
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    // Послуги: один стовпчик
+    .services__list {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .services__image {
+        width: min(100%, 280px);
+    }
+
+    .services__item-title {
+        margin: 14px 0 8px;
+    }
+
+    .services__text {
+        font-size: 13px;
+        line-height: 1.45;
+    }
+
+    // Про нас: текст, потім картинка
+    .about__container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    .about__text {
+        font-size: 14px;
+        line-height: 1.5;
+
+        p {
+            margin-bottom: 14px;
+        }
+    }
+
+    .about__image {
+        width: min(80%, 260px);
+    }
+
+    // ---------- Футер ----------
+    // Бренд на всю ширину, «Навігація» і «Контакти» — два стовпчики
+    .footer__container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 24px 16px 18px;
+        column-gap: 16px;
+        row-gap: 20px;
+    }
+
+    .footer__brand {
+        grid-column: 1 / -1;
+        gap: 8px;
+    }
+
+    .footer__logo {
+        font-size: 18px;
+
+        img {
+            width: 34px;
+            height: 34px;
+        }
+    }
+
+    .footer__description {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .footer__navigation,
+    .footer__contacts {
+        gap: 9px;
+        min-width: 0;
+    }
+
+    .footer__title {
+        font-size: 15px;
+        margin-bottom: 2px;
+    }
+
+    .footer__link,
+    .footer__contact {
+        font-size: 13px;
+        line-height: 1.3;
+    }
+
+    .footer__contact {
+        gap: 8px;
+        align-items: flex-start;
+    }
+
+    .footer__icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding-top: 12px;
+        border-top: 1px solid rgba($accent-color, 0.25);
+        font-size: 11px;
+    }
+
+    // ---------- Крок 1: параметри ----------
+    .order {
+        padding: 24px 16px 36px;
+    }
+
+    .order__title {
+        font-size: 20px;
+        margin-bottom: 22px;
+    }
+
+    .order__steps {
+        margin-bottom: 24px;
+    }
+
+    .order__steps::before,
+    .order__steps::after {
+        top: 18px;
+        height: 3px;
+    }
+
+    .order__step {
+        gap: 8px;
+    }
+
+    .order__step-number {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .order__step-label {
+        font-size: 10px;
+        line-height: 1.25;
+        overflow-wrap: anywhere;
+    }
+
+    // Один стовпчик: спершу шампанське, потім форма
+    .order__content {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .order__preview {
+        order: -1;
+        min-height: 0;
+        padding: 18px 16px;
+    }
+
+    .order__preview-image {
+        max-width: 170px;
+        margin-bottom: 10px;
+    }
+
+    .order__preview-title {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .order__preview-text {
+        font-size: 13px;
+        max-width: 320px;
+    }
+
+    .order__form {
+        padding: 20px 16px;
+        gap: 16px;
+        border-radius: 20px;
+    }
+
+    .order__form-title {
+        font-size: 18px;
+        line-height: 1.3;
+    }
+
+    .order__fields {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .order__field {
+        gap: 8px;
+    }
+
+    .order__field label {
+        font-size: 14px;
+    }
+
+.order__field {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.order__field input,
+.order__field select {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    font-size: 15px;
+}
+
+.order__field input[type="date"],
+.order__field input[type="time"] {
+    display: block;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 43px;
+    padding: 0 14px !important;
+    line-height: 43px;
+}
+
+.order__field input[type="date"]::-webkit-date-and-time-value,
+.order__field input[type="time"]::-webkit-date-and-time-value {
+    text-align: left;
+}
+.order__content,
+.order__form,
+.order__fields {
+    min-width: 0;
+    max-width: 100%;
+}
+
+    .order__budget-heading label {
+        font-size: 14px;
+    }
+
+    .order__budget-heading span {
+        font-size: 12px;
+    }
+
+    .order__budget-limits {
+        font-size: 13px;
+    }
+
+    .order__budget-value {
+        width: 100%;
+    }
+
+    .order__button {
+        width: 100%;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    // ---------- Крок 2: локація ----------
+    .order-locations__content {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .order-locations__filters {
+        padding: 20px 16px 6px;
+        border-radius: 20px;
+    }
+
+    .order-locations__heading {
+        font-size: 17px;
+        margin-bottom: 14px;
+    }
+
+    .order-locations__options {
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    .order-locations__checkbox {
+        font-size: 14px;
+        gap: 10px;
+
+        input {
+            width: 20px;
+            height: 20px;
+
+            &:checked::after {
+                line-height: 18px;
+            }
+        }
+    }
+
+    .order-locations__price-heading {
+        gap: 8px;
+        margin-bottom: 16px;
+
+        h2 {
+            font-size: 17px;
+        }
+
+        span {
+            font-size: 12px;
+        }
+    }
+
+    .order-locations__range {
+        margin: 24px 10px 14px;
+    }
+
+    .order-locations__limits {
+        font-size: 13px;
+    }
+
+    .order-locations__price-fields {
+        gap: 10px;
+
+        label {
+            flex: 1 1 0;
+            min-width: 0;
+            font-size: 14px;
+            gap: 8px;
+        }
+    }
+
+    .order-locations__price-input {
+        flex: 1;
+        width: auto;
+        min-width: 0;
+        padding: 9px 8px;
+
+        input {
+            font-size: 14px;
+        }
+
+        span {
+            font-size: 13px;
+        }
+    }
+
+    .order-locations__list {
+        gap: 14px;
+    }
+
+    // Картка: фото зверху на всю ширину, нижче все по порядку
+    .order-locations__card {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto;
+        padding: 14px;
+        row-gap: 12px;
+        min-height: 0;
+        border-radius: 18px;
+    }
+
+    .order-locations__image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .order-locations__name {
+        font-size: 17px;
+        margin-bottom: 6px;
+    }
+
+    .order-locations__meta {
+        gap: 6px 14px;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .order-locations__description {
+        font-size: 13px;
+    }
+
+    // Низ картки: ціна + кнопка в рядок, пояснення нижче на всю ширину
+    .order-locations__bottom {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 8px 12px;
+        align-items: center;
+    }
+
+    .order-locations__cost {
+        grid-column: 1;
+        grid-row: 1;
+        font-size: 18px;
+    }
+
+    .order-locations__choose {
+        grid-column: 2;
+        grid-row: 1;
+        padding: 11px 18px;
+        font-size: 14px;
+    }
+
+    .order-locations__note {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        font-size: 12px;
+        line-height: 1.35;
+    }
+
+    // ---------- Крок 3: послуги ----------
+    .order-services__layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .order-services__sidebar-title {
+        font-size: 18px;
+        margin: 0 0 12px;
+    }
+
+    // Категорії — рядок з трьох компактних плиток (іконка над підписом)
+    .order-services__categories {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .order-services__category {
+        flex: 1 1 0;
+        min-width: 0;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        padding: 12px 4px;
+        font-size: 12px;
+        text-align: center;
+
+        img {
+            width: 26px;
+            height: 26px;
+        }
+    }
+
+    .order-services__catalog {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 26px;
+        padding: 14px;
+        border-radius: 18px;
+    }
+
+    .order-services__photo {
+        height: auto;
+        aspect-ratio: 16 / 10;
+        margin-bottom: 12px;
+    }
+
+    .order-services__name {
+        font-size: 16px;
+    }
+
+    .order-services__rating {
+        font-size: 12px;
+    }
+
+    .order-services__description {
+        font-size: 13px;
+        margin-bottom: 14px;
+    }
+
+    .order-services__price strong {
+        font-size: 17px;
+    }
+
+    .order-services__add {
+        min-width: 110px;
+        height: 42px;
+        font-size: 15px;
+    }
+
+    .order-services__summary {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+        margin-top: 14px;
+    }
+
+    .order-services__selected {
+        padding: 18px 14px;
+        min-height: 0;
+        border-radius: 18px;
+    }
+
+    .order-services__selected-title {
+        font-size: 18px;
+        margin-bottom: 14px;
+    }
+
+    // Обрана послуга: фото | назва і роль | ціна | хрестик
+    .order-services__selected-item {
+        display: grid;
+        grid-template-columns: 48px minmax(0, 1fr) auto 20px;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+
+    .order-services__selected-image {
+        width: 48px;
+        height: 48px;
+    }
+
+    .order-services__selected-info {
+        min-width: 0;
+
+        h3 {
+            font-size: 14px;
+            line-height: 1.25;
+            margin-bottom: 3px;
+        }
+
+        span {
+            font-size: 12px;
+        }
+    }
+
+    .order-services__selected-price {
+        font-size: 13px;
+    }
+
+    .order-services__remove {
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+        justify-self: center;
+    }
+
+    .order-services__checkout {
+        gap: 12px;
+    }
+
+    .order-services__total {
+        padding: 20px 16px;
+        border-radius: 18px;
+
+        h2 {
+            font-size: 16px;
+        }
+
+        strong {
+            font-size: 22px;
+        }
+    }
+
+    .order-services__next {
+        min-height: 54px;
+        font-size: 17px;
+    }
+
+    // ---------- Крок 4: підтвердження ----------
+    .order-confirmation {
+        margin-top: 16px;
+    }
+
+    .order-confirmation__title {
+        font-size: 19px;
+        line-height: 1.3;
+        margin-bottom: 16px;
+    }
+
+    .order-confirmation__content {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .order-confirmation__left,
+    .order-confirmation__right {
+        gap: 14px;
+    }
+
+    .order-confirmation__card {
+        padding: 16px 14px;
+        border-radius: 18px;
+    }
+
+    .order-confirmation__card-heading {
+        margin-bottom: 14px;
+
+        h3 {
+            font-size: 16px;
+        }
+
+        a {
+            font-size: 14px;
+        }
+    }
+
+    .order-confirmation__parameters {
+        grid-template-columns: 42% minmax(0, 1fr);
+        gap: 12px 8px;
+        font-size: 13px;
+    }
+
+    // Локація: фото і текст в рядок; на дуже малих екранах — в колонку
+    .order-confirmation__location {
+        gap: 12px;
+    }
+
+    .order-confirmation__location-image {
+        width: 100px;
+        height: 90px;
+    }
+
+    .order-confirmation__location-info {
+        min-width: 0;
+
+        h4 {
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+    }
+
+    .order-confirmation__meta-item span {
+        font-size: 12px;
+    }
+
+    .order-confirmation__services {
+        gap: 14px;
+    }
+
+    .order-confirmation__service {
+        gap: 12px;
+
+        img {
+            width: 52px;
+            height: 52px;
+        }
+
+        strong {
+            font-size: 14px;
+        }
+    }
+
+    .order-confirmation__service-info h4 {
+        font-size: 15px;
+        margin-bottom: 4px;
+    }
+
+    .order-confirmation__service-info span {
+        font-size: 13px;
+    }
+
+    .order-confirmation__summary {
+        padding: 18px 16px;
+        border-radius: 18px;
+
+        > h3 {
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+    }
+
+    .order-confirmation__summary-row {
+        margin-bottom: 12px;
+
+        span {
+            font-size: 14px;
+        }
+    }
+
+    .order-confirmation__total {
+        margin-top: 20px;
+
+        h3 {
+            font-size: 17px;
+        }
+
+        strong {
+            font-size: 26px;
+        }
+    }
+
+    .order-confirmation__form {
+        padding: 18px 16px;
+        border-radius: 18px;
+        gap: 12px;
+
+        h3 {
+            font-size: 16px;
+        }
+
+        > label:not(.order-confirmation__agreement) {
+            font-size: 13px;
+        }
+
+        > input {
+            width: 100%;
+            height: 44px;
+            font-size: 15px;
+        }
+    }
+
+    .order-confirmation__agreement span {
+        font-size: 12px;
+    }
+
+    .order-confirmation__button {
+        height: 52px;
+        font-size: 16px;
+    }
+
+    // ---------- Модальне вікно успіху ----------
+    .order-success__window {
+        width: min(92vw, 440px);
+        max-width: none;
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 38px 20px 24px;
+    }
+
+    .order-success__title {
+        font-size: 20px;
+    }
+
+    .order-success__text {
+        font-size: 14px;
+        margin-bottom: 22px;
+    }
+
+    .order-success__button {
+        height: 50px;
+        font-size: 16px;
+    }
+}
+
+
+// =============================================================
+// МАЛІ ТЕЛЕФОНИ (до 380px) — iPhone SE, старі Android
+// =============================================================
+@include phone-xs {
+    .header__container {
+        padding-inline: 12px;
+        gap: 10px;
+    }
+
+    .header__logo img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .header__nav {
+        gap: 4px;
+    }
+
+    .hero__title {
+        font-size: 25px;
+    }
+
+    .hero__feature span {
+        font-size: 12px;
+    }
+
+    .footer__container {
+        padding-inline: 12px;
+    }
+
+    .order {
+        padding-inline: 12px;
+    }
+
+    .order__step-label {
+        font-size: 9px;
+    }
+
+    .locations__item {
+        flex-direction: column;
+    }
+
+    .locations__image {
+        width: 100%;
+    }
+
+    .order-locations__price-fields {
+        flex-direction: column;
+        align-items: stretch;
+
+        label {
+            flex: none;
+            justify-content: space-between;
+        }
+    }
+
+    .order-locations__price-input {
+        flex: 0 0 80%;
+    }
+
+    .order-locations__choose {
+        padding-inline: 14px;
+    }
+
+    .order-services__category {
+        font-size: 11px;
+    }
+
+    .order-services__selected-item {
+        grid-template-columns: 42px minmax(0, 1fr) auto 16px;
+        gap: 7px;
+    }
+
+    .order-services__selected-image {
+        width: 42px;
+        height: 42px;
+    }
+
+    .order-services__selected-price {
+        font-size: 12px;
+    }
+
+    .order-confirmation__location {
+        flex-direction: column;
+    }
+
+    .order-confirmation__location-image {
+        width: 100%;
+        height: 140px;
+    }
+
+}

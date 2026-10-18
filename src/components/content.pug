@@ -8,4 +8,27 @@ main.content
 
         p.hero__description Знайдіть ідеальне місце, оберіть найкращих підрядників та створіть незабутній захід – все в одному сервісі
 
-        a.hero__button(href="#order") Створити замовлення →
+        a.hero__button(href="/order.html") Створити замовлення →
+        // Переваги платформи
+        .hero__features
+            .hero__feature
+                img(src="/images/location-icon.png" alt="Локації")
+                span Швидкий вибір локацій
+
+            .hero__feature
+                img(src="/images/people-icon.png" alt="Підрядники")
+                span Надійні підрядники
+
+            .hero__feature
+                img(src="/images/shield-icon.png" alt="Ціни")
+                span Прозорі ціни
+
+            .hero__feature
+                img(src="/images/calendar-icon.png" alt="Планування")
+                span Зручне планування
+    .hero__image
+        img(src="/images/hero-image.png" alt="Святкове оформлення Evently")
+    include locations.pug
+    include services.pug
+    include about.pug
+

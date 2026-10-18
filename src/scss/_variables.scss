@@ -42,15 +42,14 @@ $border-radius-large: 20px;
 html {
     font-size: $font-size;
     color: $font-color;
-    background-color: #FFFFFF;
+    background-color: $light-accent;
     font-family: $font-family;
 }
 
 body {
     width: 100%;
     background-color: $body-color;
-    max-width: $width;
-    margin: 0 auto;
+    margin: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -58,4 +57,13 @@ body {
 
 .content {
     flex: 1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
